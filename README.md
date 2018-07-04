@@ -28,3 +28,8 @@ I would like to see a list of bookmarks on the homepage
 As a time-pressed user  
 So that I can save a webpages I frequently visit  
 I would like to add the URL and a title to the bookmark manager.
+
+**User Story 2:**
+As a user
+So I can store bookmark data for later retrieval
+I want to add a bookmark to Bookmark Manager
