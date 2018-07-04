@@ -8,7 +8,7 @@ get '/' do
 end
 
 get '/bookmark' do
-  @bookmarks = Bookmark.all
+ @bookmarks = Bookmark.all
   erb(:index)
 end
 
