@@ -8,6 +8,7 @@ describe Bookmark do
        connection.exec("INSERT INTO bookmarks (url) VALUES('http://amazon.co.uk')")
        connection.exec("INSERT INTO bookmarks (url) VALUES('http://google.com')")
 
+
       bookmarks = Bookmark.all
 
 
