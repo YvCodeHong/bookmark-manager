@@ -9,24 +9,21 @@ end
 
 get '/bookmark' do
  @bookmarks = Bookmark.all
+ p Bookmark.all
   erb(:index)
 end
 
 get '/bookmark/new' do
-  erb(:bookmarks)
+  erb(:new)
 end
 
 post '/bookmark' do
- Bookmark.create(params[:url])
- redirect '/bookmark'
+  url = params['url']
+ Bookmark.create(params['url'])
+   # connection = PG.connect(dbname: 'bookmark_manager_test')
+   # connection.exec("INSERT INTO bookmarks (url) VALUES('#{url}')")
+redirect '/bookmark'
 end
-
-# post '/bookmarks' do
-#   url = params['url']
-#   connection = PG.connect(dbname: 'bookmark_manager_test')
-#   connection.exec("INSERT INTO bookmarks (url) VALUES('#{url}')")
-#   redirect '/bookmarks'
-# end
 
 run! if app_file == $0
 end

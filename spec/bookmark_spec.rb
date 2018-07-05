@@ -1,3 +1,4 @@
+require_relative '../lib/bookmark'
 require 'pg'
 
 describe Bookmark do
@@ -20,10 +21,8 @@ describe Bookmark do
 
   describe '.create' do
     it 'should add a URL to the database' do
-      url = "http://google.com"
-      Bookmark.create(url)
-      bookmarks = Bookmark.all
-     expect(bookmarks).to eq ["http://google.com"]
+      bookmark = Bookmark.create('http://google.com')
+     expect(Bookmark.all).to include 'http://google.com'
    end
   end
 end
